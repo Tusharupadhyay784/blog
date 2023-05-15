@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+        <div class="container mt-3">
+            <% blogs.forEach(element=> { %>
+                <div class="card" style="width: 18rem;">
+                    <img src="<%= element.coverImageURL %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= element.title %></h5>
+                        <p class="card-text"><%= element.body %></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <% }) %>
+
+        </div>
+        <%= JSON.stringify(blogs) %>
+</body>
+<%- include('./partials/script.ejs')%>
+
+</html>
